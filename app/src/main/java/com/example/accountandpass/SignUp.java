@@ -57,7 +57,7 @@ public class SignUp extends AppCompatActivity implements View.OnClickListener {
         textViewSignIn = (TextView)findViewById(R.id.textViewLogin);
         progressDialog = new ProgressDialog(this);
 
-        databaseAccounts = FirebaseDatabase.getInstance().getReference("accounts/Trung");
+        databaseAccounts = FirebaseDatabase.getInstance().getReference("accounts");
 
         buttonSignUp.setOnClickListener(this);
         textViewSignIn.setOnClickListener(this);

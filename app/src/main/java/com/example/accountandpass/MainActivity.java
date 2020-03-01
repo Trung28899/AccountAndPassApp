@@ -39,6 +39,8 @@ public class MainActivity extends AppCompatActivity implements View.OnClickListe
         buttonLogin.setOnClickListener(this);
         textViewSignUp.setOnClickListener(this);
 
+
+
     }
 
     private void login(){
@@ -56,7 +58,7 @@ public class MainActivity extends AppCompatActivity implements View.OnClickListe
 
                         if(loginPassword.equals(account.getPassword())){
                             count++;
-                            Toast.makeText(getApplicationContext(), "Login Successfully !", Toast.LENGTH_LONG).show();
+                            Toast.makeText(getApplicationContext(), "Logged In Successfully !", Toast.LENGTH_LONG).show();
                             Intent intent = new Intent(getApplicationContext(), AddAccount.class);
                             intent.putExtra("UserName", loginUser);
                             startActivity(intent);
