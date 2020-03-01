@@ -1,0 +1,53 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:orientation="vertical" android:layout_width="match_parent"
+    android:layout_height="wrap_content"
+    android:layout_marginTop="100dp">
+
+    <TextView
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:textAlignment="center"
+        android:text="Account Name"
+        android:textSize="35dp"
+        android:textColor="#E90"
+        android:textStyle="bold"/>
+
+    <EditText
+        android:layout_width="310dp"
+        android:layout_height="55dp"
+        android:textAlignment="center"
+        android:layout_marginTop="30dp"
+        android:layout_marginLeft="48dp"
+        android:background="@drawable/round"
+        android:hint="Update UserName" />
+
+    <EditText
+        android:layout_width="310dp"
+        android:layout_height="55dp"
+        android:hint="Update Password"
+        android:background="@drawable/round"
+        android:textAlignment="center"
+        android:layout_marginLeft="48dp"
+        android:layout_marginTop="15dp"
+        android:ems="10"/>
+
+    <Button
+        android:id="@+id/button2"
+        android:layout_width="300dp"
+        android:layout_marginLeft="54dp"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="35dp"
+        android:text="Update"
+        android:background="@drawable/buttonround"/>
+
+    <Button
+        android:id="@+id/button"
+        android:layout_width="300dp"
+        android:layout_marginLeft="54dp"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="10dp"
+        android:text="Cancel"
+        android:background="@drawable/buttonrounddelete"/>
+
+</LinearLayout>

@@ -1,0 +1,34 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:orientation="vertical" android:layout_width="match_parent"
+    android:layout_height="wrap_content"
+    android:layout_marginTop="100dp">
+
+    <TextView
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:textAlignment="center"
+        android:text="Do you Want To Delete Account for Account Name ?"
+        android:textSize="30dp"
+        android:textColor="#E90"
+        android:textStyle="bold"/>
+
+    <Button
+        android:id="@+id/button2"
+        android:layout_width="200dp"
+        android:layout_marginLeft="110dp"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="35dp"
+        android:text="Yes"
+        android:background="@drawable/buttonround"/>
+
+    <Button
+        android:id="@+id/button"
+        android:layout_width="200dp"
+        android:layout_marginLeft="110dp"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="10dp"
+        android:text="No"
+        android:background="@drawable/buttonrounddelete"/>
+
+</LinearLayout>
