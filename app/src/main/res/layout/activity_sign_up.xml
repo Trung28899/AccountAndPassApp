@@ -24,6 +24,7 @@
             android:textAlignment="center"/>
 
         <EditText
+            android:id="@+id/editTextUserNameSignUp"
             android:layout_width="310dp"
             android:layout_height="55dp"
             android:textAlignment="center"
@@ -33,6 +34,7 @@
             android:hint="UserName" />
 
         <EditText
+        android:id="@+id/editTextPasswordSignUp"
         android:layout_width="310dp"
         android:layout_height="55dp"
         android:hint="Password"
@@ -40,9 +42,11 @@
         android:textAlignment="center"
         android:layout_marginLeft="48dp"
         android:layout_marginTop="10dp"
+        android:inputType="textPassword"
         android:ems="10"/>
 
         <EditText
+            android:id="@+id/editTextPasswordConfirm"
             android:layout_width="310dp"
             android:layout_height="55dp"
             android:hint="Confirm Password"
@@ -50,9 +54,11 @@
             android:textAlignment="center"
             android:layout_marginLeft="48dp"
             android:layout_marginTop="10dp"
+            android:inputType="textPassword"
             android:ems="10"/>
 
         <Button
+            android:id="@+id/buttonSignUp"
             android:layout_width="200dp"
             android:layout_marginLeft="104dp"
             android:layout_height="wrap_content"
@@ -61,6 +67,7 @@
             android:background="@drawable/buttonround" />
 
         <TextView
+            android:id="@+id/textViewLogin"
             android:layout_width="310dp"
             android:layout_height="wrap_content"
             android:text="Already have an account ? Login Here"

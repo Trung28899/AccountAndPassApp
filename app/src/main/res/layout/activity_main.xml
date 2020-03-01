@@ -13,7 +13,6 @@
         >
 
         <TextView
-            android:id="@+id/textView3"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
             android:text="Log In"
@@ -24,6 +23,7 @@
             android:textAlignment="center"/>
 
         <EditText
+            android:id="@+id/editTextUserName"
             android:layout_width="310dp"
             android:layout_height="55dp"
             android:textAlignment="center"
@@ -33,6 +33,7 @@
             android:hint="UserName" />
 
         <EditText
+            android:id="@+id/editTextPassword"
             android:layout_width="310dp"
             android:layout_height="55dp"
             android:hint="Password"
@@ -40,9 +41,11 @@
             android:textAlignment="center"
             android:layout_marginLeft="48dp"
             android:layout_marginTop="10dp"
-            android:ems="10"/>
+            android:ems="10"
+            android:inputType="textPassword"/>
 
         <Button
+            android:id="@+id/buttonLogin"
             android:layout_width="200dp"
             android:layout_marginLeft="104dp"
             android:layout_height="wrap_content"
@@ -51,6 +54,7 @@
             android:background="@drawable/buttonround" />
 
         <TextView
+            android:id="@+id/textViewSignUp"
             android:layout_width="310dp"
             android:layout_height="wrap_content"
             android:text="Don't have an account ? Sign Up Here"
