@@ -47,3 +47,9 @@ Room for improvement:
 - Implement back arrow on the top of the screen
 - Fix the small bugs
 - change to better background screen
+- If there is an existing user and another user
+register with the same UserName, the app should 
+not let the other user register that userName, right
+now the app changed the existing node
+- Should Have log out button
+
