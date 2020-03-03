@@ -98,6 +98,7 @@ public class AddAccount extends AppCompatActivity implements View.OnClickListene
                 intent.putExtra("USER_NAME", storedAccounts.getUserName());
                 intent.putExtra("PASSWORD", storedAccounts.getPassword());
                 intent.putExtra("OTHER_INFO", storedAccounts.getOtherInfo());
+                //intent.putExtra("DATABASE", userNameStoredAccounts);
 
 
                 startActivity(intent);

@@ -6,14 +6,20 @@
 
     <TextView
         android:layout_width="match_parent"
+        android:layout_height="wrap_content"/>
+
+    <TextView
+        android:id="@+id/textViewAccountNameUpdate"
+        android:layout_width="match_parent"
         android:layout_height="wrap_content"
         android:textAlignment="center"
         android:text="Account Name"
-        android:textSize="35dp"
+        android:textSize="28dp"
         android:textColor="#E90"
         android:textStyle="bold"/>
 
     <EditText
+        android:id="@+id/ETUserName"
         android:layout_width="310dp"
         android:layout_height="55dp"
         android:textAlignment="center"
@@ -23,6 +29,7 @@
         android:hint="Update UserName" />
 
     <EditText
+        android:id="@+id/ETPassword"
         android:layout_width="310dp"
         android:layout_height="55dp"
         android:hint="Update Password"
@@ -33,6 +40,7 @@
         android:ems="10"/>
 
     <EditText
+        android:id="@+id/ETOther"
         android:layout_width="310dp"
         android:layout_height="55dp"
         android:hint="Update Other Info"
@@ -44,7 +52,7 @@
 
 
     <Button
-        android:id="@+id/button2"
+        android:id="@+id/updateButton"
         android:layout_width="300dp"
         android:layout_marginLeft="54dp"
         android:layout_height="wrap_content"
@@ -53,12 +61,16 @@
         android:background="@drawable/buttonround"/>
 
     <Button
-        android:id="@+id/button"
+        android:id="@+id/cancelButton"
         android:layout_width="300dp"
         android:layout_marginLeft="54dp"
         android:layout_height="wrap_content"
         android:layout_marginTop="10dp"
         android:text="Cancel"
         android:background="@drawable/buttonrounddelete"/>
+
+    <TextView
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"/>
 
 </LinearLayout>
