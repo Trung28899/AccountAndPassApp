@@ -12,6 +12,7 @@
         android:orientation="vertical">
 
         <TextView
+            android:id="@+id/textViewAccountNameInfo"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
             android:text="Account Name"
@@ -22,6 +23,7 @@
             android:layout_marginTop="140dp" />
 
         <TextView
+            android:id="@+id/textViewUserNameInfo"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
             android:text="UserName: "
@@ -30,6 +32,7 @@
             android:textSize="25dp"/>
 
         <TextView
+            android:id="@+id/textViewPasswordInfo"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
             android:text="Password: "
@@ -38,6 +41,7 @@
             android:textSize="25dp"/>
 
         <TextView
+            android:id="@+id/textViewOtherInfo"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
             android:text="Other Info: "
@@ -46,7 +50,7 @@
             android:textSize="25dp"/>
 
         <Button
-            android:id="@+id/button"
+            android:id="@+id/buttonUpdate"
             android:layout_width="300dp"
             android:layout_marginLeft="54dp"
             android:layout_marginTop="50dp"
@@ -55,7 +59,7 @@
             android:background="@drawable/buttonround"/>
 
         <Button
-            android:id="@+id/button2"
+            android:id="@+id/buttonDelete"
             android:layout_width="300dp"
             android:layout_marginLeft="54dp"
             android:layout_height="wrap_content"
