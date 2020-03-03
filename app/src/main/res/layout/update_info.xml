@@ -20,52 +20,52 @@
 
     <EditText
         android:id="@+id/ETUserName"
-        android:layout_width="310dp"
-        android:layout_height="55dp"
+        android:layout_width="250dp"
+        android:layout_height="50dp"
         android:textAlignment="center"
         android:layout_marginTop="30dp"
-        android:layout_marginLeft="25dp"
+        android:layout_marginLeft="30dp"
         android:background="@drawable/round"
         android:hint="Update UserName" />
 
     <EditText
         android:id="@+id/ETPassword"
-        android:layout_width="310dp"
-        android:layout_height="55dp"
+        android:layout_width="250dp"
+        android:layout_height="50dp"
         android:hint="Update Password"
         android:background="@drawable/round"
+        android:layout_marginLeft="30dp"
         android:textAlignment="center"
-        android:layout_marginLeft="25dp"
         android:layout_marginTop="15dp"
         android:ems="10"/>
 
     <EditText
         android:id="@+id/ETOther"
-        android:layout_width="310dp"
-        android:layout_height="55dp"
+        android:layout_width="250dp"
+        android:layout_height="50dp"
+        android:layout_marginLeft="30dp"
         android:hint="Update Other Info"
         android:background="@drawable/round"
         android:textAlignment="center"
-        android:layout_marginLeft="25dp"
         android:layout_marginTop="15dp"
         android:ems="10"/>
 
 
     <Button
         android:id="@+id/updateButton"
-        android:layout_width="300dp"
-        android:layout_marginLeft="32dp"
+        android:layout_width="250dp"
         android:layout_height="wrap_content"
         android:layout_marginTop="35dp"
+        android:layout_marginLeft="30dp"
         android:text="Update"
         android:background="@drawable/buttonround"/>
 
     <Button
         android:id="@+id/cancelButton"
-        android:layout_width="300dp"
-        android:layout_marginLeft="32dp"
+        android:layout_width="250dp"
         android:layout_height="wrap_content"
         android:layout_marginTop="10dp"
+        android:layout_marginLeft="30dp"
         android:text="Cancel"
         android:background="@drawable/buttonrounddelete"/>
 

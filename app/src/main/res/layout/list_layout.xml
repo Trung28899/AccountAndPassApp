@@ -12,7 +12,7 @@
         android:textColor="#E90275"
         android:textStyle="bold"
         android:textSize="23dp"
-        android:layout_marginLeft="5dp"
+        android:layout_marginLeft="8dp"
         />
 
     <TextView
@@ -21,14 +21,14 @@
         android:layout_height="wrap_content"
         android:text="username: Trung28899"
         android:textSize="13dp"
-        android:layout_marginLeft="5dp"
+        android:layout_marginLeft="8dp"
         android:textStyle="bold"/>
 
     <TextView
         android:id="@+id/textViewListingPassword"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
-        android:layout_marginLeft="5dp"
+        android:layout_marginLeft="8dp"
         android:text="password: Trung28899"
         android:textSize="13dp"
         android:textStyle="bold"/>

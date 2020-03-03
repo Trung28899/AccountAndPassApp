@@ -52,4 +52,5 @@ register with the same UserName, the app should
 not let the other user register that userName, right
 now the app changed the existing node
 - Should Have log out button
+- Havent had landscape mode
 
