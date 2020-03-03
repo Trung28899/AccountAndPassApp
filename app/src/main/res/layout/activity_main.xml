@@ -4,6 +4,7 @@
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
+    android:background="@drawable/bg2"
     tools:context=".MainActivity">
 
     <LinearLayout
@@ -60,7 +61,7 @@
             android:text="Don't have an account ? Sign Up Here"
             android:textSize="18dp"
             android:textStyle="bold"
-            android:textColor="#00574B"
+            android:textColor="@color/colorAccent"
             android:layout_marginLeft="48dp"
             android:layout_marginTop="35dp"/>
 

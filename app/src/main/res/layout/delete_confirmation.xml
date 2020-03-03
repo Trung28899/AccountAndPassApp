@@ -6,29 +6,38 @@
 
     <TextView
         android:layout_width="match_parent"
+        android:layout_height="wrap_content"/>
+
+    <TextView
+        android:id="@+id/textViewDelete"
+        android:layout_width="match_parent"
         android:layout_height="wrap_content"
         android:textAlignment="center"
-        android:text="Do you Want To Delete Account for Account Name ?"
-        android:textSize="30dp"
+        android:text="Do you Want To Delete Account ?"
+        android:textSize="25dp"
         android:textColor="#E90"
         android:textStyle="bold"/>
 
     <Button
-        android:id="@+id/button2"
+        android:id="@+id/buttonConfirm"
         android:layout_width="200dp"
-        android:layout_marginLeft="110dp"
+        android:layout_marginLeft="80dp"
         android:layout_height="wrap_content"
         android:layout_marginTop="35dp"
         android:text="Yes"
         android:background="@drawable/buttonround"/>
 
     <Button
-        android:id="@+id/button"
+        android:id="@+id/buttonNo"
         android:layout_width="200dp"
-        android:layout_marginLeft="110dp"
+        android:layout_marginLeft="80dp"
         android:layout_height="wrap_content"
         android:layout_marginTop="10dp"
         android:text="No"
         android:background="@drawable/buttonrounddelete"/>
+
+    <TextView
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"/>
 
 </LinearLayout>

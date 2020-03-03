@@ -61,6 +61,7 @@ public class AddAccount extends AppCompatActivity implements View.OnClickListene
     private ProgressDialog progressDialog;
     private ListView listViewAccounts;
     List<storedAccount> listOfAccounts;
+    public String userNameStoredAccounts;
 
     DatabaseReference databaseStoredAccounts;
 
@@ -80,7 +81,7 @@ public class AddAccount extends AppCompatActivity implements View.OnClickListene
 
         String userNamePassed = getIntent().getStringExtra("UserName");
         String greeting = "Hello " + userNamePassed + " !";
-        String userNameStoredAccounts = "accounts/" + userNamePassed + "/SavedAccount";
+        userNameStoredAccounts = "accounts/" + userNamePassed + "/SavedAccount";
         textViewUserName.setText(greeting);
 
         databaseStoredAccounts = FirebaseDatabase.getInstance().getReference(userNameStoredAccounts);
@@ -98,7 +99,7 @@ public class AddAccount extends AppCompatActivity implements View.OnClickListene
                 intent.putExtra("USER_NAME", storedAccounts.getUserName());
                 intent.putExtra("PASSWORD", storedAccounts.getPassword());
                 intent.putExtra("OTHER_INFO", storedAccounts.getOtherInfo());
-                //intent.putExtra("DATABASE", userNameStoredAccounts);
+                intent.putExtra("DATABASE", userNameStoredAccounts);
 
 
                 startActivity(intent);
@@ -106,7 +107,7 @@ public class AddAccount extends AppCompatActivity implements View.OnClickListene
         });
     }
 
-    private void addAccount(){
+    private void addAccount(String dataBasePath){
         String accountName = editTextAccountName.getText().toString().trim();
         String userNameAdd = editTextUserName.getText().toString().trim();
         String passwordAdd = editTextPassword.getText().toString().trim();
@@ -132,9 +133,6 @@ public class AddAccount extends AppCompatActivity implements View.OnClickListene
             // Stop the function from executing further
             return;
         }
-
-        progressDialog.setMessage("Adding Account...");
-        progressDialog.show();
 
         storedAccount storedAccount = new storedAccount(accountName, userNameAdd, passwordAdd, "");
         databaseStoredAccounts.child(id.toString()).setValue(storedAccount);
@@ -172,7 +170,7 @@ public class AddAccount extends AppCompatActivity implements View.OnClickListene
     @Override
     public void onClick(View v) {
         if(v == buttonAddAccount){
-            addAccount();
+            addAccount(userNameStoredAccounts);
         }
     }
 }

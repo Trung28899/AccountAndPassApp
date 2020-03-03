@@ -23,6 +23,7 @@ public class AccountInfo extends AppCompatActivity implements View.OnClickListen
 
     private TextView textViewAccountNameInfo, textViewUserNameInfo, textViewPasswordInfo, textViewOtherInfo;
     private Button buttonUpdate, buttonDelete;
+    public String databasePath, accountNameInfo;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -38,13 +39,19 @@ public class AccountInfo extends AppCompatActivity implements View.OnClickListen
 
         String userNameInfo = "Username: " + getIntent().getStringExtra("USER_NAME");
         String passwordInfo = "Password: " + getIntent().getStringExtra("PASSWORD");
-        String otherInfo = getIntent().getStringExtra("OTHER_INFO");
-        String accountNameInfo = getIntent().getStringExtra("ACCOUNT_NAME");
+        String otherInfo = "Other Info: "+getIntent().getStringExtra("OTHER_INFO");
+        accountNameInfo = getIntent().getStringExtra("ACCOUNT_NAME");
+        databasePath = getIntent().getStringExtra("DATABASE");
 
         textViewAccountNameInfo.setText(accountNameInfo);
         textViewUserNameInfo.setText(userNameInfo);
         textViewPasswordInfo.setText(passwordInfo);
-        textViewOtherInfo.setText(otherInfo);
+
+        if(otherInfo.equals("Other Info: ")){
+            textViewOtherInfo.setText("");
+        } else {
+            textViewOtherInfo.setText(otherInfo);
+        }
 
         buttonUpdate.setOnClickListener(this);
         buttonDelete.setOnClickListener(this);
@@ -87,6 +94,23 @@ public class AccountInfo extends AppCompatActivity implements View.OnClickListen
                 String userName = ETUserName.getText().toString().trim();
                 String password = ETPassword.getText().toString().trim();
                 String other = ETOther.getText().toString().trim();
+                String id = accountNameInfo;
+
+                if(TextUtils.isEmpty(userName)){
+                    Toast.makeText(getApplicationContext(), "Please update your Username", Toast.LENGTH_SHORT).show();
+                    return;
+                }
+
+                if(TextUtils.isEmpty(password)){
+                    Toast.makeText(getApplicationContext(), "Please update your Password", Toast.LENGTH_SHORT).show();
+                    return;
+                }
+
+                DatabaseReference databaseReference = FirebaseDatabase.getInstance().getReference(databasePath).child(id);
+                storedAccount storedAccount = new storedAccount(id,userName, password, other);
+                databaseReference.setValue(storedAccount);
+
+                Toast.makeText(getApplicationContext(), "Account is Updated Successfully", Toast.LENGTH_LONG).show();
 
                 alertDialog.dismiss();
             }
@@ -100,20 +124,57 @@ public class AccountInfo extends AppCompatActivity implements View.OnClickListen
         });
     }
 
-    /*
-    private boolean updateAccount(){
-        // Getting the particular artist that need to be updated
-        DatabaseReference databaseReference = FirebaseDatabase.getInstance().getReference("artists").child(id);
-        // create a new artist with new id, name and genre
-        Artist artist = new Artist(id, name, genre);
+    private void deleteInfo(){
+        /***************************************
+         ***************************************
+         Initialize and Showing update_info
+         after hit update button
+         ***************************************
+         ***************************************/
+        AlertDialog.Builder dialogBuilder = new AlertDialog.Builder(this);
 
-        // Over-writting the new artist into a specified id
-        databaseReference.setValue(artist);
+        LayoutInflater inflater = getLayoutInflater();
 
-        Toast.makeText(this, "Artist is Updated Successfully", Toast.LENGTH_LONG).show();
+        final View dialogView = inflater.inflate(R.layout.delete_confirmation, null);
 
-        return true;
-    }*/
+        TextView textViewDelete = (TextView) dialogView.findViewById(R.id.textViewDelete);
+        Button confirmButton = dialogView.findViewById(R.id.buttonConfirm);
+        Button noButton = dialogView.findViewById(R.id.buttonNo);
+
+        textViewDelete.setText("Do you want to Delete "+accountNameInfo+" ?");
+
+        dialogBuilder.setView(dialogView);
+
+        final AlertDialog alertDialog = dialogBuilder.create();
+        alertDialog.show();
+
+        /***************************************
+         ***************************************
+         Button Listeners of update_info
+         ***************************************
+         ***************************************/
+
+        confirmButton.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                String id = accountNameInfo;
+                DatabaseReference dbAccount = FirebaseDatabase.getInstance().getReference(databasePath).child(id);
+
+                alertDialog.cancel();
+                dbAccount.removeValue();
+
+                Toast.makeText(getApplicationContext(), "Account is Deleted !", Toast.LENGTH_LONG).show();
+            }
+        });
+
+        noButton.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                alertDialog.cancel();
+            }
+        });
+
+    }
 
     @Override
     public void onClick(View v) {
@@ -122,7 +183,7 @@ public class AccountInfo extends AppCompatActivity implements View.OnClickListen
             updateInfo(accountNameInfo);
         }
         if(v == buttonDelete){
-            //deleteInfo();
+            deleteInfo();
         }
     }
 }

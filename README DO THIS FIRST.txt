@@ -41,5 +41,9 @@ small bug)
 - In AddAccount.java Activity: the list cut the password part of the 
 last account
 
-https://www.16personalities.com/infj-personality 
+Application Finished
+Room for improvement: 
 
+- Implement back arrow on the top of the screen
+- Fix the small bugs
+- change to better background screen
